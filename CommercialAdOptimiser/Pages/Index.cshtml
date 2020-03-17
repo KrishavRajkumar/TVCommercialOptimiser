@@ -1,0 +1,44 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Optimal Placements";
+}
+
+<h2>Placements</h2>
+
+<table class="table">
+	<tr class="table-bordered">
+		<td>Break Group</td>
+		<td>Sum</td>
+	</tr>
+	@foreach (var item in Model.sumQuery)
+	{
+		<tr class="table-bordered">
+			<td>@item.BreakGroupName</td>
+			<td>@item.SumOfBreakGroupViews</td>
+		</tr>
+	}
+
+</table>
+
+<table class="table">
+	<tr class="table table-striped">
+		<td>Break Group</td>
+		<td>Commercial Name</td>
+		<td>Commercial Type</td>
+		<td>Demographic Type</td>
+		<td>Rating</td>
+	</tr>
+	
+	@foreach (var item in Model.optimalPlacements)
+	{		
+
+		<tr class="table table-striped">
+			<td>@item.BreakGroup</td>
+			<td>@item.CommercialName</td>
+			<td>@item.CommercialType</td>
+			<td>@item.DemographicType</td>
+			<td>@item.Rating</td>
+		</tr>
+	}
+</table>
